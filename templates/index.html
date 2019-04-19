@@ -39,9 +39,13 @@
                         </form>
                     </div>
                     <div class="header-right">
-                        <a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a>
+                        {% if 'logged_in' in session %}
+                            <a href="{{ url_for('logout') }}"><i class="fa fa-sign-in-alt"></i> Logout</a>
+                        {% else %}
+                             <a href="{{ url_for('login') }}"><i class="fa fa-sign-in-alt"></i> Login</a>
+                        {% endif %}
                         <a href="signup.html"><i class="fas fa-user-plus"></i> Register</a>
-                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="{{ url_for('profile') }} "><i class="fas fa-user"></i> Profile</a>
                     </div>
                 </div>
                 

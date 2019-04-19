@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SendIT | Profile</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- fontawesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        <!-- jquery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- custom css -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer-style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form_css.css') }}">
+
+    </head>
+    <body>
+
+
+          <div class="container">
+
+
+                <!-- HEADER SECTION BEGINS HERE -->
+                <header>
+                    <div class="header">
+                        <a href="{{ url_for('index') }}" class="logo">
+                            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+                        </a>
+                        <div class="search">
+                            <form class="search-form">
+                                <input type="text" placeholder="Search ..">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                        <div class="header-right">
+                            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a href="signup.html"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        </div>
+                    </div>
+                    
+                </header>
+                <!-- HEADER SECTION ENDS HERE -->
+
+
+
+
+                <section class="user_profile">
+                    <div class="left">
+
+                        <i class="fa fa-dashboard"></i> Dashboard
+                        <hr class="hr1">
+                        <br>
+                        <h4>Manage Account</h>
+                        <p class="fa_user">
+                            <i class="fas fa-user-circle" id="user_icon"></i>
+                        </p>
+                        <br>
+
+                        <ul id="manage_ac">
+
+                            <li>
+                                <button type="button" data-href="delivered_orders.html" class="orders_controls">
+                                    <i class="fas fa-check-double" id="icon_btns"></i> &nbsp; &nbsp;Delivered Orders
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" data-href="my_recent_qstns.html" class="orders_controls">
+                                    <i class="fa fa-clock-o" id="icon_btns" aria-hidden="true"></i> &nbsp; &nbsp; In Transit
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" data-href="my_answers.html" class="orders_controls">
+                                    <i class="fas fa-bars" id="icon_btns" aria-hidden="true"></i> &nbsp; &nbsp; All Orders
+                                </button>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                    <div class="right">
+
+                        <i class="fas fa-ellipsis-v"></i></i> Details
+
+                        <hr class="hr1">
+
+                        <div id="loader">
+                            <section>
+                    <p class="order_title">
+                        Order a delivery
+                    </p>
+                </section>
+
+                <hr class="hr">
+
+              
+                <section class="columns">
+    
+                    <div class="order-column">
+                        <table>
+                            <tr width="30%">
+                                <td class="order-txt" rowspan="3" align="center">
+                                    Origin <i class="fas fa-map-marker-alt"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Select Box </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Select Box </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="order-column" id="destination">
+                        <table>
+                            <tr>
+                                <td class="order-txt" rowspan="3" align="center">
+                                    Destination <i class="fas fa-map-marker-alt"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Select City </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Pickup Location </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+
+                    <div class="order-column">
+                        <table>
+                            <tr>
+                                <td rowspan="3" class="order-txt" align="center">
+                                    Service <i class="fas fa-cogs"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Select Box </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>
+                                        <select>
+                                            <option selected> Select Box </option>
+                                            <option>Short Option</option>
+                                            <option>This Is A Longer Option</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </section>
+
+                <h4 class="order_details_title">Order Details</h4>
+                <hr class="hr">
+                <div class="order_details">
+                    
+                    <input type="text" class="order-input" id="item-name" placeholder="item name" name="item-name">
+                    <input type="text" class="order-input" id="item-weight" placeholder="weight (kg)" name="item-weight">
+                    <input type="text" class="order-input" id="item-length" placeholder="length (cm)" name="item-length">
+                    <input type="text" class="order-input" id="item-width" placeholder="width (cm)" name="item-width">
+                    <input type="text" class="order-input" id="item-height" placeholder="height (cm)" name="item-height">
+                    <input type="number" class="order-input" id="item-qty" placeholder="item(s) qty" name="item-height">
+                    
+                </div>
+
+                <h4 class="order_details_title">Account Details</h4>
+
+                <hr class="hr">
+
+                <div class="order_details">
+                    <input type="text" class="order-input" id="u_name" placeholder="name" name="u_name">
+                    <input type="email" class="order-input" id="email" placeholder="email" name="email">
+                    <input type="password" class="order-input" id="pwd" placeholder="password" name="pswd"> 
+                </div>
+                    <br>
+                    <button type="submit" class="order_btn">
+                        Submit <i class="fas fa-paper-plane"></i>
+                    </button>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <br>
+
+                <div class="content">
+
+                    <div class="footer-grids">
+
+                        <div class="footer one">
+                            <h3>About Us</h3>
+                            <p>
+                                Founded in 2016 as a messenger company in Kenya, SendIT has grown into a multi-billion-dollar corporation by clearly focusing on the goal of enabling commerce around the globe. Today, SendIT is a global company with one of the most recognized and admired brands in the world. We have become the world's largest package delivery company and a leading global provider of specialized transportation and logistics services. Every day, we manage the flow of goods, funds, and information in more than 200 countries and territories worldwide.
+                            </p>
+                            <p class="manu">- Emmanuel Sindani, CEO</p>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="footer two">
+                            <h3>Keep Connected</h3>
+                            <ul>
+                                <li><a class="fb" href="#"><i></i>Like us on Facebook</a></li>
+                                <li><a class="fb1" href="#"><i></i>Follow us on Twitter</a></li>
+                                <li><a class="fb2" href="#"><i></i>Add us on Google Plus</a></li>
+                                <li><a class="fb3" href="#"><i></i>Follow us on Dribbble</a></li>
+                                <li><a class="fb4" href="#"><i></i>Follow us on Pinterest</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer three">
+                            <h3>Contact Information</h3>
+                            <ul>
+                                <li>SendIT <span>P.O. Box (00100) - 357,</span>Nairobi, Kenya.</li>
+                                <li>(+254) 074 668 3785  </li>
+                                <li><a href="crimsoftit@gmail.com">crimsoftit@gmail.com</a> </li>
+                            </ul>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+
+                    <div class="copy-right-grids">
+                        <div class="copy-left">
+                                <p class="footer-gd">© 2018 SendIT. All Rights Reserved | Design by <a href="https://manu1919.github.io/" target="_blank">Crimsoft</a></p>
+                        </div>
+                        <div class="copy-right">
+                            <ul>
+                                <li><a href="#">Company Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <script type="text/javascript" src="js/js.js"></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $("#loader").load("my_qstns.html");
+                });
+            </script>
+       
+    </body>
+</html>
