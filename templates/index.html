@@ -13,8 +13,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <!-- custom css -->
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/footer-style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer-style.css') }} ">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -30,7 +30,7 @@
             <header>
                 <div class="header">
                     <a href="index.html" class="logo">
-                        <img src="img/logo.png" alt="logo">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
                     </a>
                     <div class="search">
                         <form class="search-form">
@@ -61,7 +61,7 @@
                         </p>
                         <a href="create_order.html" class="order"><button class="button"><span>Order Now</span></button></a>
                     </div>
-                    <img src="img/slider/1.jpg">
+                    <img src="{{ url_for('static', filename='img/slider/1.jpg') }}">
                     <div class="text"></div>
                 </div>
 
@@ -73,7 +73,7 @@
                         </p>
                         <button class="button" style=""><span>Order Now </span></button>
                     </div>
-                    <img src="img/slider/2.jpg">
+                    <img src="{{ url_for('static', filename='img/slider/2.jpg') }}">
                     <div class="text"></div>
                 </div>
 
@@ -90,7 +90,7 @@
                             </button>
                         </a>
                     </div>
-                    <img src="img/slider/3.jpg">
+                    <img src="{{ url_for('static', filename='img/slider/3.jpg') }}">
                     <div class="text"></div>
                 </div>
 
