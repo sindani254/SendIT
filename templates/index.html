@@ -1,56 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+{% extends "layout.html" %}
 
-        <title>SENDIT</title>
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- fontawesome icons -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
-
-        <!-- jquery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <!-- custom css -->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer-style.css') }} ">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-
-
-    </head>
-
-    <body>
-        <div class="container">
-
-
-            <!-- HEADER SECTION BEGINS HERE -->
-            <header>
-                <div class="header">
-                    <a href="index.html" class="logo">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
-                    </a>
-                    <div class="search">
-                        <form class="search-form">
-                            <input type="text" placeholder="Search ..">
-                            <input type="submit" value="Submit">
-                        </form>
-                    </div>
-                    <div class="header-right">
-                        {% if 'logged_in' in session %}
-                            <a href="{{ url_for('logout') }}"><i class="fa fa-sign-in-alt"></i> Logout</a>
-                        {% else %}
-                             <a href="{{ url_for('login') }}"><i class="fa fa-sign-in-alt"></i> Login</a>
-                        {% endif %}
-                        <a href="signup.html"><i class="fas fa-user-plus"></i> Register</a>
-                        <a href="{{ url_for('profile') }} "><i class="fas fa-user"></i> Profile</a>
-                    </div>
-                </div>
-                
-            </header>
-            <!-- HEADER SECTION ENDS HERE -->
+{% block content %}
+            
 
 
 
@@ -143,53 +94,8 @@
 
 
             <br>
-            <div class="content">
-                <div class="footer-grids">
-                    <div class="footer one">
-                        <h3>About Us</h3>
-                        <p> Nemo enim ipsam voluptatem quia
-                        voluptas sit aspernatur aut odit aut fugit, 
-                        sed quia consequuntur magni dolores eos qui 
-                        ratione voluptatem sequi nesciunt.</p>
-                        <p class="manu">- Emmanuel Sindani, CEO</p>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="footer two">
-                        <h3>Keep Connected</h3>
-                        <ul>
-                            <li><a class="fb" href="#"><i></i>Like us on Facebook</a></li>
-                            <li><a class="fb1" href="#"><i></i>Follow us on Twitter</a></li>
-                            <li><a class="fb2" href="#"><i></i>Add us on Google Plus</a></li>
-                            <li><a class="fb3" href="#"><i></i>Follow us on Dribbble</a></li>
-                            <li><a class="fb4" href="#"><i></i>Follow us on Pinterest</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer three">
-                        <h3>Contact Information</h3>
-                        <ul>
-                            <li>SendIT <span>P.O. Box (00100) - 357,</span>Nairobi, Kenya.</li>
-                            <li>(+254) 074 668 3785  </li>
-                            <li><a href="crimsoftit@gmail.com">crimsoftit@gmail.com</a> </li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="copy-right-grids">
-                    <div class="copy-left">
-                            <p class="footer-gd">© 2018 SendIT. All Rights Reserved | Design by <a href="https://manu1919.github.io/" target="_blank">Crimsoft</a></p>
-                    </div>
-                    <div class="copy-right">
-                        <ul>
-                            <li><a href="#">Company Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-
-        </div>
+            
+        
 
 
 
@@ -232,5 +138,4 @@
             }
         </script>
 
-    </body>
-</html>
+{% endblock %}

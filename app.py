@@ -1,9 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request, session
 from functools import wraps
+import sqlite3
 
 app = Flask(__name__)
 
 app.secret_key = "@nonymous"
+app.database = "sample.db"
 
 
 # login required decorator
@@ -44,6 +46,10 @@ def logout():
 @login_required
 def profile():
     return render_template("profile.html")
+
+
+def connect_db():
+    return sqlite3.connect(app.database)
 
 
 if __name__ == '__main__':
